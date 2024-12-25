@@ -33,7 +33,7 @@ instructions: "Enable wrapping for boxes with the <code>flex-wrap</code> propert
 solution: "flex-wrap:wrap;"
 },
 {
- level: "8: Complex Alignment",
+ level: "10: Complex Alignment",
  instructions: "Combine multiple properties like <code>align-items</code>, <code>justify-content</code>, and <code>flex-wrap</code> to create intricate layouts. Use <code>align-items</code> to control vertical alignment, <code>justify-content</code> for horizontal spacing, and <code>flex-wrap</code> to enable multi-line layouts. Experiment with these to achieve the desired arrangement.",
  solution: "align-items:center; justify-content:space-evenly; flex-wrap:wrap;"
 }

@@ -21,14 +21,34 @@ nav > .logo{
 }
 .logo img {
     background-color: black;
+    animation: upin 1s ease-out forwards;
 }
-
+@keyframes upin {
+    0% {
+      opacity: 0;
+      transform: translatey(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translatey(0);
+    }
+  }
 .nav-links {
     display: flex;
     gap: 2.5rem;
     padding: 3rem;
+    animation: downin 1s ease-out forwards;
 }
-
+@keyframes downin {
+    0% {
+      opacity: 0;
+      transform: translatey(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translatey(0);
+    }
+  }
 .nav-links a {
     text-decoration: none;
     color: white;
@@ -54,9 +74,20 @@ nav > .logo{
     padding: 5rem 0rem 0rem 2rem;
     font-size: 6.125rem;
     width: 30rem;
+    animation: slideIn 1s ease-out forwards;
 }
+@keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 .co .co0 span{
-    color: aqua;
+    color: #00bcd4;
 }
 .co1{
     font-size: 2rem;
@@ -67,23 +98,50 @@ nav > .logo{
 }
 
 .co button{
-    background-color: transparent;
-    border-radius: 50px;
-    font-size: 1.5rem;
+    font-size: 18px;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
     font-weight: bold;
-    border: 2px solid white;
-    color: aliceblue;
+    padding: 0.7em 2em;
+    border: 3px solid white;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 3px 6px rgba(0, 0, 0, 0.1);
+    color: white;
+    text-decoration: none;
+    overflow: hidden;
+    background-color: transparent;
+    transition: 0.3s ease all;
+    z-index: 1;
+    border-radius: 50px;
     width: 14rem;
     height: 4.5rem;
-    transition: .4s linear;
-    margin: 2rem 0rem 0rem 2rem;
 }
 
-.co button:hover{
+.co button:before{
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
     background-color: #00bcd4;
+    z-index: -1;
+}
+.co button:hover,.co-0 button:focus{
     color: black;
-    border: 2px solid #00bcd4;
-    cursor: pointer
+    border: 3px solid black;
+}
+.co button:hover:before,.co-0 button:focus:before{
+    transition: 1s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+.co button:active{
+    transform: scale(0.9);
 }
 .img{
     margin: -2rem 15rem 0rem 33rem;
@@ -92,6 +150,7 @@ nav > .logo{
 .img img{
     width: 25rem;
     height: 35rem;
+    animation: downin 1s ease-out forwards;
 }
 .body2{
     display: flex;
@@ -106,7 +165,19 @@ nav > .logo{
 .img2 img{
     width: 20rem;
     height: 30rem;
-    
+    animation: scroll linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 50%;
+}
+@keyframes scroll {
+    from{
+        opacity: 0;
+        scale: 0.5;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
 }
 .co-0{
     display: flex;
@@ -115,7 +186,10 @@ nav > .logo{
     width: 30rem;
     gap: 2rem;
     margin-top: -8rem;
-}
+    animation: scroll linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 50%;
+}   
 .co2{
     font-size: 3.5rem;
 }
@@ -123,28 +197,57 @@ nav > .logo{
     font-size: 1.5rem;
 }
 .co-0 button{
-    background-color: transparent;
-    border-radius: 50px;
-    font-size: 1.5rem;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
     font-weight: bold;
-    border: 2px solid white;
-    color: aliceblue;
+    padding: 0.7em 2em;
+    border: 3px solid white;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 3px 6px rgba(0, 0, 0, 0.1);
+    color: white;
+    text-decoration: none;
+    overflow: hidden;
+    background-color: transparent;
+    transition: 0.3s ease all;
+    z-index: 1;
+    border-radius: 50px;
     width: 14rem;
     height: 4.5rem;
-    transition: .4s linear;
-    margin-left: 2rem;
 }
-
-.co-0 button:hover{
+.co-0 button:before{
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
     background-color: #00bcd4;
-    color: black;
-    border: 2px solid #00bcd4;
-    cursor: pointer
+    z-index: -1;
 }
-
+.co-0 button:hover,.co-0 button:focus{
+    color: black;
+    border: 3px solid black;
+}
+.co-0 button:hover:before,.co-0 button:focus:before{
+    transition: 1s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+.co-0 button:active{
+    transform: scale(0.9);
+}
 .upper-footer{
     display: flex;
     justify-content: space-evenly;
+    animation: scroll linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 20%;
 }
 .upper-footer-content1{
     font-size: 2rem;

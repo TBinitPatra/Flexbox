@@ -2,42 +2,42 @@ const $Game_levels = [
     {
       level: "1: Row Alignment",
       instructions: "Change 'flex-direction' to 'column' to arrange boxes vertically.",
-      solution: "flex-direction: column;"
+      solution: "flex-direction:column;"
     },
     {
       level: "2: Align the Box",
       instructions: "Use 'justify-content: center' to align the box horizontally in the middle.",
-      solution: "justify-content: center;"
+      solution: "justify-content:center;"
     },
     {
       level: "3: Reverse Order",
       instructions: "Set 'flex-direction' to 'row-reverse' or 'column-reverse' to change box order.",
-      solution: "flex-direction: row-reverse;"
+      solution: "flex-direction:row-reverse;"
     },
     {
       level: "4: Space Distribution",
       instructions: "Use 'justify-content' with 'space-between', 'space-around', or 'space-evenly' to distribute space.",
-      solution: "justify-content: space-between;"
+      solution: "justify-content:space-between;"
     },
     {
       level: "5: Align to Start",
       instructions: "Set 'align-items' to 'flex-start' for top alignment.",
-      solution: "align-items: flex-start;"
+      solution: "align-items:flex-start;"
     },
     {
       level: "6: Vertical Centering",
       instructions: "Combine 'align-items: center' and 'justify-content: center' to center boxes.",
-      solution: "align-items: center; justify-content: center;"
+      solution: "align-items:center;justify-content:center;"
     },
     {
       level: "7: Wrap Items",
       instructions: "Enable wrapping with 'flex-wrap: wrap' to move items to a new row or column.",
-      solution: "flex-wrap: wrap;"
+      solution: "flex-wrap:wrap;"
     },
     {
       level: "8: Complex Alignment",
       instructions: "Combine 'align-items', 'justify-content', and 'flex-wrap' for intricate layouts.",
-      solution: "align-items: center; justify-content: space-evenly; flex-wrap: wrap;"
+      solution: "align-items:center;justify-content:space-evenly;flex-wrap:wrap;"
     }
   ];
   
@@ -76,7 +76,7 @@ function interface_create(level_index){
                     </ul>
         <pre class="coding-pre">#pond {
       display: flex;
-        <textarea name="code" id="textarea" cols="30" rows="2"></textarea>
+        <textarea name="code" id="textarea" cols="30" rows="3"></textarea>
       }
                 </pre>
                 </div>
@@ -85,43 +85,17 @@ function interface_create(level_index){
     </div>`;
 }
 const textarea = document.getElementById('textarea');
-
-/* function interface_change(style_input){
-    const box_place = document.getElementById('display-0')
-    box_place.style.cssText += style_input    
-} */
-
 const popup_close = document.getElementById("close-popup-btn")
 const show = document.getElementById("popup")
 
-/* function level_check(){
-    const userInput = document.getElementById('textarea').value.trim();
-    const solution = $Game_levels[currentLevel].solution;
 
-    if (userInput === solution) {         
-        
-        currentLevel++
-        if (currentLevel < $Game_levels.length) {
-            interface_create(currentLevel); 
-        } else {
-            alert('Congratulations! You completed all levels!'); 
-            nextBtn.disabled = true; 
-        }
-    } else {
-        alert('Incorrect! Try again.'); 
-    }
-    
-}
- */
 interface_create(currentLevel)
-/* nextBtn.addEventListener('click', level_check);
-nextBtn.addEventListener('click',() => show.classList.add("show-popup")) */
 nextBtn.addEventListener('click', () => {
     const userInput = document.getElementById('textarea').value.trim();
     const solution = $Game_levels[currentLevel].solution;
 
     if (userInput === solution) {         
-        show.classList.add("show-popup"); // Add the "show-popup" class
+        show.classList.add("show-popup"); 
         currentLevel++
         if (currentLevel < $Game_levels.length) {
             interface_create(currentLevel); 

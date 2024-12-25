@@ -8,7 +8,7 @@
 }
 body {
     margin: 2rem;
-    background-color: #000000;
+    background-color: #141414;
     color: white;
     /* overflow: hidden; */
     font-family: "Open Sans", serif;
@@ -164,7 +164,7 @@ nav {
 }
 
 .next button:hover {
-    background-color: darkgrey;
+    background-color: rgb(98, 210, 255);
 }
 
 #textarea{
@@ -226,6 +226,10 @@ nav {
     color: black;
     border: 2px solid #00bcd4;
 
+}
+textarea{
+    font-size: 20px;
+    font-weight: 200;
 }
 
 @media screen and (max-width: 768px) {
