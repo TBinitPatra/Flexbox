@@ -6,18 +6,19 @@
     <title>Flex-box Puzzle</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="level_style.css">
 </head>
 
 <body>
     <!-- Navbar -->
     <nav>
         <div class="navsvg">
-            <img src="logo.svg" alt="Logo">
+            <img src="/front_page/svg/logo.svg" alt="Logo">
         </div>
         <label for="toggler"><i class="fa-solid fa-bars"></i></label>
         <input type="checkbox" id="toggler">
         <div class="menu">
+            <a href="index.html">HOME</a>
             <a href="#">ABOUT</a>
             <a href="#">SIGN IN</a>
             <a href="#">SIGN UP </a>
@@ -31,12 +32,11 @@
     <button id="next" style="z-index: 1;">Next</button>
 </div>
 <section class="popup-container" id="popup">
-<div class="popup-outer-border">
-    <div class="popup-inner-border">
-        <p><i class="fa-solid fa-check"></i>  Congratulation! Correct Answer</p>
-        <button class="button" id="close-popup-btn">click</button>
-    </div>
-</div>
+    <div class="popup-outer-border">
+        <div class="popup-inner-border">
+            <p><i class="fa-solid fa-check"></i>  Congratulation! Correct Answer</p>
+            <button class="button" id="close-popup-btn">click</button>
+        </div></div>
 </section>
     <script src="script.js"></script>
 </body>
