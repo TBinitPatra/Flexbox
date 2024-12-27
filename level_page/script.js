@@ -27,7 +27,7 @@ const $Game_levels = [
     {
       level: "6: Vertical Centering",
       instructions: "Combine 'align-items: center' and 'justify-content: center' to center boxes.",
-      solution: "align-items:center;justify-content:center;"
+      solution: "align-items:center;\njustify-content:center;"
     },
     {
       level: "7: Wrap Items",
@@ -37,7 +37,7 @@ const $Game_levels = [
     {
       level: "8: Complex Alignment",
       instructions: "Combine 'align-items', 'justify-content', and 'flex-wrap' for intricate layouts.",
-      solution: "align-items:center;justify-content:space-evenly;flex-wrap:wrap;"
+      solution: "align-items:center;\njustify-content:space-evenly;\nflex-wrap:wrap;"
     }
   ];
   
@@ -91,10 +91,10 @@ const show = document.getElementById("popup")
 
 interface_create(currentLevel)
 nextBtn.addEventListener('click', () => {
-    const userInput = document.getElementById('textarea').value.trim();
+    const userInput = document.getElementById('textarea').value.split(' ').join('');
     const solution = $Game_levels[currentLevel].solution;
 
-    if (userInput === solution) {         
+    if (userInput == solution) {         
         show.classList.add("show-popup"); 
         currentLevel++
         if (currentLevel < $Game_levels.length) {
