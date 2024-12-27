@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <title>Register</title>
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Press+Start+2P&display=swap');
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #20bdbd;
+        background-image: url(LOREGI.png);
+        background-size: cover;
+        font-family: "Press Start 2P", serif;
+      }
+      form {
+        width: 500px;
+        padding: 20px;
+        box-shadow: 0 0 40px rgba(203, 33, 33, 0.1);
+        color: rgb(234, 18, 18);
+      }
+      input {
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      #registerForm input{
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="registerForm">
+      <marquee behavior="slide" direction="up"><h2 style="text-align: center;">Register</h2></marquee>
+      <input type="text" id="name" placeholder="Name" required />
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <input
+        type="password"
+        id="confirmPassword"
+        placeholder="Confirm Password"
+        required
+      />
+      <button type="submit">Register</button>
+      &nbsp;<a href="login.html" style="color: #20bdbd;">Go to Login</a>
+    </form>
+
+    <script>
+      document
+        .getElementById("registerForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const name = document.getElementById("name").value;
+          const username = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+          const confirmPassword =
+            document.getElementById("confirmPassword").value;
+
+          if (password !== confirmPassword) {
+            alert("Passwords do not match");
+            return;
+          }
+
+          const user = {
+            name: name,
+            username: username,
+            password: password,
+          };
+
+          localStorage.setItem(username, JSON.stringify(user));
+          alert("Registration successful! Please login.");
+          window.location.href = "login.html";
+        });
+    </script>
+  </body>
+</html>
